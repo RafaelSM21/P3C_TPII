@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import connect from "./models/connection";
-import routes from "./routes/Funcionario";
+import routes from "./routes/index";
 
 dotenv.config();
 

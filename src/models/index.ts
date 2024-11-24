@@ -62,13 +62,14 @@ const FuncionarioSchema = new Schema({
       required: [true, 'Salário é obrigatório.'],
       min: [0, 'Salário não pode ser negativo.']
     },
-    funcionario: {
+    funcionarioId: {  // Mudando para "funcionarioId"
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Funcionario',
       required: [true, 'Funcionário é obrigatório.'],
       unique: true
     },
-  });
+});
+
    
   // Exportando os modelos
   const Funcionario = mongoose.model('Funcionario', FuncionarioSchema);

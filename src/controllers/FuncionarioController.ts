@@ -16,7 +16,7 @@ class FuncionarioController {
         } catch (error: any) {
             if (error.code === 11000 || error.code === 11001) {
                 // código 11000 e 11001 indica violação de restrição única (índice duplicado)
-                return res.json({ message: "Erro" });
+                return res.json({ message: "Esse email/telefone já está em uso" });
             } else if (error && error.errors["email"]) {
                 return res.json({ message: error.errors["email"].message });
             } else if (error && error.errors["nome"]) {
@@ -78,7 +78,7 @@ class FuncionarioController {
         } catch (error: any) {
             if (error.code === 11000 || error.code === 11001) {
                 // código 11000 e 11001 indica violação de restrição única (índice duplicado)
-                return res.json({ message: "Erro" });
+                return res.json({ message: "Esse email/telefone já está em uso" });
             } else if (error && error.errors["email"]) {
                 return res.json({ message: error.errors["email"].message });
             } else if (error && error.errors["nome"]) {
