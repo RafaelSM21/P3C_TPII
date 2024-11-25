@@ -53,21 +53,20 @@ const FuncionarioSchema = new Schema({
   // Mensalista Schema
   const MensalistaSchema = new Schema({
     matricula: {
-      type: Number,
+      type: String,
       required: [true, 'Matrícula é obrigatória.'],
       unique: true
-    },
-    salario: {
+  },
+  salario: {
       type: Number,
       required: [true, 'Salário é obrigatório.'],
       min: [0, 'Salário não pode ser negativo.']
-    },
-    funcionarioId: {  // Mudando para "funcionarioId"
+  },
+  funcionario: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Funcionario',
-      required: [true, 'Funcionário é obrigatório.'],
-      unique: true
-    },
+      ref: 'Funcionario', // Nome do modelo de Funcionario
+      required: true
+  }
 });
 
    
