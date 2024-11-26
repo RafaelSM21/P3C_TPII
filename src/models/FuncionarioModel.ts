@@ -1,7 +1,4 @@
 class FuncionarioModel {
-    static findById(funcionarioId: any) {
-        throw new Error("Method not implemented.");
-    }
     id:string = ""
     nome:string;
     idade: number;

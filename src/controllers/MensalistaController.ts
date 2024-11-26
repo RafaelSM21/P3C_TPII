@@ -3,7 +3,7 @@ import { Mensalista, Funcionario } from "../models"; // Certifique-se de que os 
 
 class MensalistaController {
 
-    // Create (POST)
+    // Create
     public async create(req: Request, res: Response): Promise<Response> {
         const { matricula, salario, funcionarioId } = req.body; // 'funcionarioId' é o ID do Funcionario
 
@@ -33,7 +33,7 @@ class MensalistaController {
         }
     }
 
-    // List (GET)
+    // List
     public async list(_: Request, res: Response): Promise<Response> {
         try {
             const objects = await Mensalista.find()
@@ -46,7 +46,7 @@ class MensalistaController {
         }
     }
 
-    // Delete (DELETE)
+    // Delete
     public async delete(req: Request, res: Response): Promise<Response> {
         const { id: _id } = req.body; // Obtendo o ID do Mensalista
 
@@ -62,7 +62,7 @@ class MensalistaController {
         }
     }
 
-    // Update (PUT)
+    // Update
     public async update(req: Request, res: Response): Promise<Response> {
         const { id, matricula, salario, funcionarioId } = req.body; // Recebe o ID, matricula, salario e funcionarioId
 
