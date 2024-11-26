@@ -3,8 +3,7 @@ import { Funcionario } from "../models";
 
 class FuncionarioController {
 
-    // create
-
+    // Create
     public async create(req: Request, res: Response): Promise<Response> {
         const { nome, idade, email, fone } = req.body;
         try {
@@ -30,8 +29,7 @@ class FuncionarioController {
         }
     }
 
-    // list
-
+    // List
     public async list(_: Request, res: Response): Promise<Response> {
         try {
             const objects = await Funcionario.find().sort({ nome: "asc" });
@@ -41,8 +39,7 @@ class FuncionarioController {
         }
     }
 
-    // delete
-
+    // Delete
     public async delete(req: Request, res: Response): Promise<Response> {
         const { id: _id } = req.body; // _id do registro a ser excluído
         try {
@@ -57,8 +54,7 @@ class FuncionarioController {
         }
     }
 
-    // update
-
+    // Update
     public async update(req: Request, res: Response): Promise<Response> {
         const { id, nome, idade, email, fone } = req.body;
         try {
